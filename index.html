@@ -17,6 +17,7 @@
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#galeria">Galeria</a></li>
                 <li><a href="#contato">Contato</a></li>
+                 
             </ul>
         </nav>
     </header>
@@ -31,6 +32,11 @@
     <!-- Nova Seção: Galeria de Imagens -->
     <section id="galeria" class="galeria-section">
         <h2>Nossa Galeria</h2>
+        <h4>Clique na foto para expandir!
+
+        </h4>
+        <h4>Clique na legenda da foto para ler o comentário</h4>
+       
         <div class="galeria-grid">
             <div class="galeria-item">
                 <img src="imagens/juniordoido01.jpeg" alt="Imagem 1">
@@ -39,43 +45,76 @@
             </div>
             <!--A tag ABBR abre uma caixa de comentarios ao passar o mouse no TITLE-->
             <div class="galeria-item">
-                <img src="imagens/Roberto01.jpeg" alt="Imagem 2">
-                <div class="legenda">Roberto</div>
+                <img src="imagens/roberto.jpeg" alt="Imagem 2">
+                <div class="legenda"><abbr title="O filho mais novo">Roberto</abbr></div>
             </div>
             <div class="galeria-item">
-                <img src="imagens/baia01.jpeg" alt="Imagem 3">
-                <div class="legenda">Baia</div>
+                <img src="imagens/baia.jpeg" alt="Imagem 3">
+                <div class="legenda"><abbr title="O berranteiro">Junior Baia</abbr></div>
             </div>
             <div class="galeria-item">
-                <img src="imagens/drzito01.jpeg" alt="Imagem 4">
-                <div class="legenda">Dr Zito</div>
+                <img src="imagens/drzito.jpeg" alt="Imagem 4">
+                <div class="legenda"><abbr title="O patrão do grupo">Dr Zito</abbr></div>
             </div>
                 <div class="galeria-item">
-                <img src="imagens/kaka01.jpeg" alt="Imagem 5">
+                <img src="imagens/kaka.jpeg" alt="Imagem 5">
                 <div class="legenda"><abbr title="O filho mais velho de Germano">Kaká</abbr></div>
             </div>        
             <div class="galeria-item">
-                <img src="imagens/gardenal01.jpeg" alt="Imagem 6">
-                <div class="legenda"><abbr title="Um poço de intelectualidade!">Gardenal</abbr></div>
+                <img src="imagens/gardenal.jpeg" alt="Imagem 6">
+                <div class="legenda"><abbr title="Um poço de intelectualidade!">Gardenal</abbr> </div>
             </div>
             <div class="galeria-item">
-                <img src="imagens/" alt="Imagem 7">
-                <div class="legenda">teste2</div>
+                <img src="imagens/joselio.jpeg" alt="Imagem 7">
+                <div class="legenda"><abbr title="O pegador de velhinhas!">Joselio</abbr></div>
+            </div>       
+            <div class="galeria-item">
+                <img src="imagens/joscelio.jpeg" alt="Imagem 8">
+            <div class="legenda"><abbr title="O vaqueiro topado">Joscelio</abbr> </div></div>
+            <div class="galeria-item">
+                <img src="imagens/ivonildo.jpeg" alt="Imagem 9">
+                <div class="legenda"><abbr title="O filho mais velho do casarão">Ivonildo</abbr></div>
             </div>        
             <div class="galeria-item">
-                <img src="imagens/" alt="Imagem 8">
-                <div class="legenda">teste3</div>
+                <img src="imagens/roberio.jpeg" alt="Imagem 10">
+                <div class="legenda"><abbr title="O topado das estradas!">Roberio</abbr></div>
             </div>
             <div class="galeria-item">
-                <img src="imagens/" alt="Imagem 9">
-                <div class="legenda">teste4</div>
-            </div>        
-            <div class="galeria-item">
-                <img src="imagens/" alt="Imagem 10">
-                <div class="legenda">teste5</div>
+                <img src="imagens/junior-100.jpeg" alt="Imagem 11">
+                <div class="legenda"><abbr title="Pressão total!">Junior 100%</abbr></div>
             </div>
-        
     </section>
+    
+    <!-- Seção Adicionar Foto e Comentário -->
+<section id="adicionar-post" class="contato-section">
+    <h2>Participe: Adicione uma Foto ou Comentário</h2>
+    
+    <form id="formUpload" class="form-contato">
+        <div class="campo">
+            <label for="autorPost">Seu Nome:</label>
+            <input type="text" id="autorPost" placeholder="Digite seu nome" required>
+        </div>
+
+        <div class="campo">
+            <label for="fotoInput">Escolha uma Imagem (Opcional):</label>
+            <input type="file" id="fotoInput" accept="image/*">
+        </div>
+
+        <div class="campo">
+            <label for="comentarioPost">Seu Comentário ou Legenda:</label>
+            <textarea id="comentarioPost" rows="3" placeholder="Escreva algo sobre a foto ou deixe um recado..." required></textarea>
+        </div>
+
+        <button type="submit">Publicar no Site</button>
+    </form>
+
+    <!-- Mural de Comentários -->
+    <div id="muralComentarios" class="mural-container">
+        <h3>Comentários Recentes</h3>
+        <div id="listaComentarios"></div>
+    </div>
+</section>
+
 
     <!-- Nova Seção: Formulário de Contato -->
     <section id="contato" class="contato-section">
@@ -101,6 +140,17 @@
     <footer>
         <p>&copy; 2026 Os perde Feira. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- Modal para Expandir Foto -->
+<div id="modalGaleria" class="modal-overlay hidden">
+    <span id="fecharModal" class="modal-fechar">&times;</span>
+    <div class="modal-conteudo">
+        <img id="imagemAmpliada" src="" alt="Foto Ampliada">
+        <p id="legendaAmpliada"></p>
+    </div>
+</div>
+
+                       
 
     <script src="script.js"></script>
 </body>
